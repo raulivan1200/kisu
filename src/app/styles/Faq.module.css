@@ -1,0 +1,93 @@
+.pcent{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.buttonexpand{
+width: 100%;
+padding-left: 5%;
+}
+.buttonexpandll{
+    width: 100%;
+    padding-left: 0% !important;
+    }
+.centerfaq{
+    text-align: center;
+    max-width: 80%;
+}
+
+.HidenText{
+    margin-top: 32px;
+    padding-left: 5vw;
+    width:90%;
+    text-align: left;
+    word-wrap: normal;
+}
+
+.hrex{
+    width: 90%;
+    margin: 0;
+    }
+
+.plus{
+    color: #ff91af ;
+}
+
+.expandcont{
+    margin-bottom: 32px;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faqcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    
+}
+.extxt{
+    cursor: none !important;
+    padding-left: 5%;
+    text-align: left;
+}
+
+@media screen and (max-width:769px) {
+    .buttonexpand{
+        width: 90%;
+    }
+    .hrex{
+        width: 100%;
+    }
+    .faqbt{
+        font-size: 1.5em;
+    }
+}
+.normal {
+    transform: rotateX(180deg);
+    
+    transition: transform 0.2s ease-in;
+    opacity: .5;
+  }
+  
+  .rotated {
+    transition: transform 0.2s ease-out;
+    opacity: 1;
+
+  }
+  .faqrowp{
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row !important;
+  }
+  .expandcont:hover .normal {
+    opacity: 1;
+  }
