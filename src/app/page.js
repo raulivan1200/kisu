@@ -5,35 +5,90 @@ import Menu from "./Components/Menu";
 import Faq from "./Components/home/Faq/Faq";
 import LilFaq from "./Components/home/Faq/LilFaq";
 import styles from "./styles/Head.module.css"
+import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
-const home = () => {
-  return ( <div>
-    <div className={styles.toptext}>
-      {/*animar linea a linea*/}
-    <h1>Kisu is a global branding and UX design agency</h1>
+import { useTransform } from "framer-motion";
+import React, { useRef } from "react";
+import Scrollcheker from "./Components/home/Scrollchecker";
+export default function home() {
 
+  const ref= useRef(null);
+  const { scrollY } = useScroll({
+    target:ref,
+    offset:["start start", "end end"]
+  })
+  const rotate = useTransform(
+    scrollY,
+    [0, 100],
+    ["80%", "85%"],
+    
+  )
+  const lines = [
+    "Kisu is a global ",
+    "branding and UX",
+    "design agency"
+  ];
+
+  return ( 
+  <div>
+     <div className={styles.toptext}>
+      {lines.map((line, index) => (
+        <motion.h1
+          key={index}
+          initial={{ opacity: 0, y: index*2+20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 ,ease:"easeInOut"}}
+        >
+          {line}
+        </motion.h1>
+      ))}
     </div>
-    <motion.div >
-    <video className="video"  type="video/mp4" muted  loop playsinline="" disablepictureinpicture="" autoPlay preload="metadata">
+    <div className="space"></div>
+    <motion.div style={{width:rotate}} className={styles.papa} ref={ref}>
+    <video className={styles.video}  type="video/mp4" muted  loop playsinline="" disablepictureinpicture="" autoPlay preload="metadata">
       <source src="/showreel.mp4" type="video/mp4"/>
     </video>
     </motion.div>
-    <Menu/>
+    <div className="space"></div>
 
-
-    <div className={styles.twodiv}>
+<div className={styles.ptw}>
+<div className={styles.twodiv}>
     <div className={styles.twchone}>  
-    <small>    Based in San Francisco, we strengthen brands through exceptional digital experiences for companies worldwide.
-</small>
+    <small style={{width:"85%", display:"flex", margin:"0 auto"}}>    Based in San Francisco, we strengthen brands through exceptional digital experiences for companies worldwide.</small>
     </div>
     <div className={styles.twchtwo}>
       <LilFaq/>
     </div>
     </div>
-    
+</div>
+
+<div className="space"></div>
+
+
+<div className={styles.papicon}>
+<div class={styles.icons}>
+    <div class={styles.col1}><img src="/icons/amazon.svg" alt="Icon 1"/></div>
+    <div class={styles.col2}><img src="/icons/shopify.svg" alt="Icon 2"/></div>
+    <div class={styles.col3}><img src="/icons/fiverr.svg" alt="Icon 3"/></div>
+    <div class={styles.col4}><img src="/icons/upwork.svg" alt="Icon 4"/></div>
+    <div class={styles.col5}><img src="/icons/next-js.svg" alt="Icon 5"/></div>
+    <div class={styles.col6}><img src="/icons/vercel.svg" alt="Icon 6"/></div>
+    <div class={styles.col7}><img src="/icons/html.svg" alt="Icon 7"/></div>
+    <div class={styles.col8}><img src="/icons/java.svg" alt="Icon 8"/></div>
+
+</div>
+</div>
+<div className="space"></div>
+
+<div className="space"></div>
+
+<Scrollcheker/>
+
+<div className="space"></div>
+
+<h3 className="spacel spacesm" style={{lineHeight:"0",margin:"0"}}>FAQ</h3>
     <Faq/>
-    <Foot/>
+    <div className="space"></div>
+
   </div> );
 }
- 
-export default home;

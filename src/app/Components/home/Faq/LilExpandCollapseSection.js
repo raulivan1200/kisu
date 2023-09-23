@@ -15,7 +15,7 @@ const LilExpandCollapseSection = ({ toggleText, contentText, isExpanded, onToggl
             initial={{ height: 0 }}
             animate={{ height: 'auto' }}
             exit={{ height: 0 }}
-            transition={{ duration: .2, ease: 'backInOut', stiffness: 300, damping: 900, mass: 300 }}
+            transition={{ duration: .2, ease: 'easeInOut', stiffness: 30, damping: 10, mass: 300 }}
             style={{ overflow: 'hidden' }}
             className={styles.HidenText}
           >

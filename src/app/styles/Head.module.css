@@ -1,16 +1,15 @@
 .toptext{
-    padding-top: 10%;
-    width: 90%;
+    width: 85%;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
 }
 .twodiv{
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .twchone{order: 1;
 width: 40%;}
@@ -19,16 +18,144 @@ width: 40%;}
 
 @media screen and (max-width:769px) {
     .toptext{
-        padding-top: 40%;
     }
     .twodiv{
         flex-direction: column;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         justify-content: center;
         align-items: center;
     }
+    .twchone{
+      padding-top: 10%;
+      padding-bottom: 20%;
+    }
     .twchone, .twchtwo{
         width: 100% !important;
     }
+    .video{
+        width: 100% !important;
+      }
 }
+.papa{
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.video{
+    height: auto;
+    width: 100%;
+  }
+.ptw{
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+
+}
+
+.icons img{
+    height:  100%;
+    width: 69px;
+    filter: saturate(0);
+}
+.papicon{
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    box-sizing: border-box;
+}
+.icons {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* Creates 2 rows */
+    gap: 25%; /* Adjust the gap between items */
+    grid-template-areas:
+      "col1 col2 col3 col4"
+      "col5 col6 col7 col8";
+    justify-content: space-evenly; /* Added justify-content property */
+    align-items: center; /* Align items vertically in the center */
+
+  }
+  
+  .col1 { grid-area: col1; }
+  .col2 { grid-area: col2; }
+  .col3 { grid-area: col3; }
+  .col4 { grid-area: col4; }
+  .col5 { grid-area: col5; }
+  .col6 { grid-area: col6; }
+  .col7 { grid-area: col7; }
+  .col8 { grid-area: col8; }
+  .col1,.col2,.col3,.col4,.col5,.col6,.col7,.col8{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 767px) {
+    .icons {
+      grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+      grid-template-rows: repeat(4, 1fr); /* Creates 4 rows */
+      grid-template-areas:
+        "col1 col2"
+        "col3 col4"
+        "col5 col6"
+        "col7 col8";
+    }
+  }
+  
+.lim {
+    list-style: none outside none
+  }
+  .ulm {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .lim {
+    float: left;
+    list-style-type: none;
+    list-style: none;
+  }
+  
+  .lim a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .lim a:hover {
+    color: var(--tb);
+  }
+
+
+  .lineMask{
+    overflow: hidden;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 300px;
+      gap: 20vw;
+      margin-bottom: 300px;
+    }
+    
+    .body{
+      font-size: 5vw;
+      color: black;
+    }
+    
+    .lineMask p{
+      margin: 0px;
+      font-weight: 700;
+    }
+    
+    

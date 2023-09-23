@@ -1,3 +1,5 @@
+import Foot from './Components/Foot'
+import Menu from './Components/Menu'
 import './globals.css'
 
 export const metadata = {
@@ -8,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Menu/>
+        {children}
+        <Foot/>
+        </body>
     </html>
   )
 }

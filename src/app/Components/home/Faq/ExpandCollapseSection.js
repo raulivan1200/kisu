@@ -13,7 +13,7 @@ const ExpandCollapseSection = ({ toggleText, contentText, isExpanded, onToggle }
             initial={{ height: 0 }}
             animate={{ height: 'auto' }}
             exit={{ height: 0 }}
-            transition={{ duration: .2, ease: 'backInOut', stiffness: 300, damping: 10, mass: 100 }}
+            transition={{ duration: .2, ease: 'easeInOut', stiffness: 300, damping: 100, mass: 100 }}
             style={{ overflow: 'hidden' }}
             className={styles.HidenText}
           >
