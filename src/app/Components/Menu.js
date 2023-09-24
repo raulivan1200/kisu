@@ -42,10 +42,22 @@ useMotionValueEvent(scrollY, "change", (latest) =>{
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: "0.2", ease: "easeIn" }}
       className='nav'
+      
     >
 
-<Image priority src={open} className='svco' alt='open' width={48} height={48} style={{ cursor: "pointer" }} onClick={handleClick}></Image>
-
+<div style={{width:"90%",flexDirection:"row",display:"flex",justifyContent:"space-between"}}>
+<a href="#"><img className='logoa'  src="/kisu.svg" alt="kisu logo" style={{width:"auto", height:"69px"}}/></a>
+<Image priority src={open} className='svco hod' alt='open' width={48} height={48} style={{ cursor: "pointer" }} onClick={handleClick}></Image>
+<div className="hom">
+<ul className={styles.ulm}>
+      <li className={styles.lim}><a href="/"><h6>Work</h6></a></li>
+        <li className={styles.lim}><a href="/Clients"><h6>Clients</h6></a></li>
+        <li className={styles.lim}><a href="/Services"><h6>Services</h6></a></li>
+        <li className={styles.lim}><a href="/About"><h6>About</h6></a></li>
+        <li className={styles.lim}><a href="/Contact"><h6>Contact</h6></a></li>
+      </ul>
+</div>
+</div>
 <AnimatePresence>
           {isOpen && (
             <motion.div className="menu-container"

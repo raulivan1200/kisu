@@ -10,6 +10,9 @@ import styles from "../../styles/Scroll.module.css"
 function Verticalscroll() {
   return (
     <div className={styles.parentvs}>
+      <div style={{position:"absolute"}}>
+        <h1>past <br/>projects</h1>
+      </div>
         <div className={styles.imtext}>            
         <Image width={0} height={0} src={woff} alt="Restaurant landing page"/>
         <h5 className={styles.txc}>Woffles</h5>

@@ -62,9 +62,15 @@ export default function Form() {
       </div>
 
       <div className={styles.butonform}>
-        <div className={styles.buttons}>
-          <button className={styles.btn} role="submit"><span></span><p data-start="Get Started!" data-text="Call us!" data-title="Get Started!"></p></button>
-        </div>
+        <button role="submit" style={{backgroundColor:"black"}} class="button" href="#">
+            <span className="button__icon-wrapper">
+           
+            <img src="/arrow.svg"  className="button__icon-svg" style={{filter:"invert(1)"}} alt=""/>
+            <img src="/arrow.svg"  className="button__icon-svg  button__icon-svg--copy" style={{filter:"invert(1)" }} alt=""/>
+            </span>
+            <h6 style={{color:"var(--white)"}}>Contact us</h6>
+        </button>
+
       </div>
 
       {successMessage && <h3>{successMessage}</h3>}

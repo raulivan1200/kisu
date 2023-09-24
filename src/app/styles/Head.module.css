@@ -96,6 +96,9 @@ width: 40%;}
     height: 100%;
   }
   @media (max-width: 767px) {
+    .lineMask{
+      padding-left: 10%;
+    }
     .icons {
       grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
       grid-template-rows: repeat(4, 1fr); /* Creates 4 rows */
@@ -149,13 +152,13 @@ width: 40%;}
     }
     
     .body{
-      font-size: 5vw;
       color: black;
     }
-    
-    .lineMask p{
-      margin: 0px;
-      font-weight: 700;
-    }
-    
+
+.lineMask{
+    overflow: hidden;
+    padding-left: 7.5%;
+}
+
+
     

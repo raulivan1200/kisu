@@ -20,7 +20,7 @@ function LilFaq() {
       { toggleText: 'Content', contentText: "Content is a crucial aspect of the user experience, and we offer a range of services to support this, including copywriting, illustration, 2D and 3D graphics, iconography, animation, video production, and photography." },
       // Add more FAQ data as needed
     ];
-  
+  //agregar 3d
   return (
     <div>
     {faqData.map((item, index) => (

@@ -15,7 +15,7 @@ h6,
 h7,
 h2,
 p {
-  color: black;
+  color: var(--tb);
 }
 body,
 html {
@@ -46,10 +46,11 @@ textarea {
   width: 100%;
   background-color: white;
   padding: 10px 0;
-  z-index: 1000;
+  z-index: 100;
   height: fit-content;
   display: flex;
   flex-direction: row;
+  justify-content:center;
 }
 
 :root {
@@ -57,6 +58,8 @@ textarea {
   --blue: #57aef5;
   --green: #41d1bc;
   --tb: #333333;
+  --white:#ffffff;
+  --black:#000000;
 }
 ::selection {
   background: var(--pink);
@@ -140,13 +143,15 @@ small,
   font-size: 1.2rem;
   font-family: Eudoxus;
 }
+@media screen and (max-width: 1000px) {
+  .hod{
+    display: inline-block !important;
+  }
+  .hom{
+    display: none !important;
+  }
+}
 @media screen and (max-width: 769px) {
-  .hod{
-    display: none;
-  }
-  .hod{
-    display: inline;
-  }
   h1 {
     font-size: 30px;
   }
@@ -173,7 +178,7 @@ small,
 }
 .sticky_parent {
   width: 100%;
-  height: 450vh;
+  height: 200vh;
   position: initial;
   margin: 0;
 }
@@ -188,7 +193,7 @@ small,
   position: absolute;
   top: 0;
   height: 100%;
-  width: 500vw;
+  width: 200vw;
   will-change: scroll-position;
   display: flex;
   justify-content: space-between;
@@ -224,8 +229,7 @@ small,
 .pahz {
   display: flex;
   flex-direction: row;
-  width: 100dvw 100% !important;
-  margin: 0 15vw;
+  width: 100vw 100% !important;
 }
 .pppphz {
   width: fit-content;
@@ -280,10 +284,10 @@ small,
   padding-left: 7.5%;
 }
 .hod{
-display: inline-block;
+display: none;
 }
 .hom{
-display: none;
+display: inline-block;
 }
 
 @keyframes rotate {
@@ -308,3 +312,86 @@ display: none;
 }
 
 
+.new{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.new:hover{
+  filter: saturate(1.01) contrast(1.01);
+  transition:all ease-in-out ;
+  transition-duration: .5;
+  scale: 1.05;
+}
+
+
+
+.button {
+  border: 2px solid rgb(255, 255, 255); /* Added border property */
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  background-color: var(--tb);
+  color: var(--black);
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color .3s;
+}
+button{
+  cursor: pointer;
+}
+a{
+  cursor: pointer;
+}
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  background-color: var(--black);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: var(--black);
+  scale: .95;
+
+}
+
+.button:hover .button__icon-wrapper {
+  color: var(--black);
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform .3s ease-in-out;
+  transform: translate(150%, -150%);
+  scale: .95;
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform .3s ease-in-out .1s;
+  transform: translate(0);
+  scale: .95;
+
+}
+.button:active{
+  scale: 1.05;
+  transition: all ease-in-out;
+}
+.button:hover{
+  filter: invert(1);
+}

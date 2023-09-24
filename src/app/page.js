@@ -28,21 +28,22 @@ export default function home() {
     "branding and UX",
     "design agency"
   ];
-
+  const animation = {
+        initial: {y: "105%"},
+        enter: i => ({y: "0", transition: {duration: 0.75, ease: [0.33, 1, 0.68, 1],  delay: 0.075 * i}}),
+      }
   return ( 
   <div>
-     <div className={styles.toptext}>
-      {lines.map((line, index) => (
-        <motion.h1
-          key={index}
-          initial={{ opacity: 0, y: index*2+20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 ,ease:"easeInOut"}}
-        >
-          {line}
-        </motion.h1>
-      ))}
-    </div>
+    <div className="space"></div>
+    <div className="space"></div>
+
+    {lines.map((line, index) => (
+  <div className={styles.lineMask} key={index}>  
+    <motion.h1 custom={index} variants={animation} initial="initial" animate={"enter"}>
+      {line}
+    </motion.h1>
+  </div>
+))}
     <div className="space"></div>
     <motion.div style={{width:rotate}} className={styles.papa} ref={ref}>
     <video className={styles.video}  type="video/mp4" muted  loop playsinline="" disablepictureinpicture="" autoPlay preload="metadata">
@@ -88,6 +89,7 @@ export default function home() {
 
 <h3 className="spacel spacesm" style={{lineHeight:"0",margin:"0"}}>FAQ</h3>
     <Faq/>
+    <div className="space"></div>
     <div className="space"></div>
 
   </div> );
