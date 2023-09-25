@@ -1,0 +1,30 @@
+.container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 70% 15% 15%; /* Modificado para reflejar las proporciones deseadas */
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "po ptw ptr";
+  }
+  
+  .po {
+    grid-area: po;
+  }
+  
+  .ptr {
+    display: flex;
+    justify-content: end !important;
+    grid-area: ptr;
+    align-items: self-end;
+  }
+  
+  .ptw {
+    grid-area: ptw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tittles{
+    margin: 0;
+  }

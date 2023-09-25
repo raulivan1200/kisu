@@ -20,7 +20,7 @@ export default function home() {
   const rotate = useTransform(
     scrollY,
     [0, 100],
-    ["80%", "85%"],
+    ["75%", "85%"],
     
   )
   const lines = [
